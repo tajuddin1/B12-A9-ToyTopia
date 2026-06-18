@@ -11,29 +11,29 @@
     "pictureURL": "https://i5.walmartimages.com/seo/LEGO-Classic-Creative-Party-Box-Bricks-Set-11029-Family-Games-Play-Together-Includes-12-Mini-Build-Toys-Teddy-Bear-Clown-Unicorn-Fun-ages-5-Plus_78f23e01-7787-478b-91b9-365b363a1943.276062d1bc6ba3baefd6870d3d917aa2.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
     "subCategory": "Building Blocks"
   },
-  {
+    {
     "toyId": 2,
-    "toyName": "Building Sets",
+    "toyName": "Math Learning Board",
     "sellerName": "Toy Store 2",
-    "sellerEmail": "seller2@toyshop.com",
-    "price": 20.0,
-    "rating": 4.6,
-    "availableQuantity": 26,
-    "description": "The Building Set is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
-    "pictureURL": "https://m.media-amazon.com/images/I/71tN2gjeKXL._AC_SL1500_.jpg",
-    "subCategory": "Building Blocks"
+    "sellerEmail": "seller8@toyshop.com",
+    "price": 35.0,
+    "rating": 4.3,
+    "availableQuantity": 44,
+    "description": "The Math Learning Board is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
+    "pictureURL": "https://m.media-amazon.com/images/I/71aqcQeSmhL._AC_SL1500_.jpg",
+    "subCategory": "Educational Toys"
   },
   {
     "toyId": 3,
-    "toyName": "Space Adventure Blocks",
+    "toyName": "Dinosaur Plush",
     "sellerName": "Toy Store 3",
-    "sellerEmail": "seller3@toyshop.com",
-    "price": 22.5,
-    "rating": 4.7,
-    "availableQuantity": 29,
-    "description": "The Space Adventure Blocks is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
-    "pictureURL": "https://m.media-amazon.com/images/I/81nCEjp31kL._AC_SL1500_.jpg",
-    "subCategory": "Building Blocks"
+    "sellerEmail": "seller21@toyshop.com",
+    "price": 67.5,
+    "rating": 4.5,
+    "availableQuantity": 83,
+    "description": "The Dinosaur Plush is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
+    "pictureURL": "https://m.media-amazon.com/images/I/71cnomInEVL._AC_SL1500_.jpg",
+    "subCategory": "Soft Toys"
   },
   {
     "toyId": 4,
@@ -41,7 +41,7 @@
     "sellerName": "Toy Store 4",
     "sellerEmail": "seller4@toyshop.com",
     "price": 25.0,
-    "rating": 4.8,
+    "rating": 4.6,
     "availableQuantity": 32,
     "description": "The Castle Construction Kit is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
     "pictureURL": "https://m.media-amazon.com/images/I/81CvUtyZZZL._AC_SL1200_.jpg",
@@ -85,15 +85,15 @@
   },
   {
     "toyId": 8,
-    "toyName": "Math Learning Board",
+    "toyName": "Building Sets",
     "sellerName": "Toy Store 8",
-    "sellerEmail": "seller8@toyshop.com",
-    "price": 35.0,
+    "sellerEmail": "seller2@toyshop.com",
+    "price": 20.0,
     "rating": 4.6,
-    "availableQuantity": 44,
-    "description": "The Math Learning Board is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
-    "pictureURL": "https://m.media-amazon.com/images/I/71aqcQeSmhL._AC_SL1500_.jpg",
-    "subCategory": "Educational Toys"
+    "availableQuantity": 26,
+    "description": "The Building Set is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
+    "pictureURL": "https://m.media-amazon.com/images/I/71tN2gjeKXL._AC_SL1500_.jpg",
+    "subCategory": "Building Blocks"
   },
   {
     "toyId": 9,
@@ -221,7 +221,7 @@
     "sellerName": "Toy Store 19",
     "sellerEmail": "seller19@toyshop.com",
     "price": 62.5,
-    "rating": 4.5,
+    "rating": 4.0,
     "availableQuantity": 77,
     "description": "The Elephant Plush is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
     "pictureURL": "https://m.media-amazon.com/images/I/71oc1H1ZztS._AC_SL1500_.jpg",
@@ -241,14 +241,14 @@
   },
   {
     "toyId": 21,
-    "toyName": "Dinosaur Plush",
+    "toyName": "Space Adventure Blocks",
     "sellerName": "Toy Store 21",
-    "sellerEmail": "seller21@toyshop.com",
-    "price": 67.5,
+    "sellerEmail": "seller3@toyshop.com",
+    "price": 22.5,
     "rating": 4.7,
-    "availableQuantity": 83,
-    "description": "The Dinosaur Plush is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
-    "pictureURL": "https://m.media-amazon.com/images/I/71cnomInEVL._AC_SL1500_.jpg",
-    "subCategory": "Soft Toys"
+    "availableQuantity": 29,
+    "description": "The Space Adventure Blocks is a thoughtfully designed toy that combines entertainment, creativity, and learning in a single package. Children can spend hours exploring new ideas, building confidence, and developing important cognitive and motor skills while playing. Made from high-quality, child-friendly materials, this toy is durable, safe, and suitable for everyday use. It encourages imagination, problem-solving, and independent thinking while also creating opportunities for collaborative play with friends and family members. Whether used at home, in the classroom, or during playdates, it provides a rewarding experience that supports healthy development. Its engaging design, attractive appearance, and long-lasting construction make it a wonderful gift choice for birthdays, holidays, and special occasions.",
+    "pictureURL": "https://m.media-amazon.com/images/I/81nCEjp31kL._AC_SL1500_.jpg",
+    "subCategory": "Building Blocks"
   }
 ]
