@@ -3,6 +3,7 @@ import Root from "../layout/Root";
 import Home from "../pages/Home/Home";
 import ProductDetails from "../pages/Products/ProductDetails";
 import Login from "../pages/Auth/Login";
+import Register from "../pages/Auth/Register";
 const url = "/toys.json";
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         Component: Login
+      },
+      {
+        path: "/register",
+        Component: Register,
       }
     ]
   }
