@@ -4,7 +4,7 @@ import Rating from 'react-rating';
 import { Link } from 'react-router';
 
 const ProductCard = ({ product }) => {
-  const { toyName , pictureURL, rating, availableQuantity , price , subCategory} = product;
+  const { toyId, toyName , pictureURL, rating, availableQuantity , price , subCategory} = product;
   return (
     <div className="card p-5 border bg-base-100 border-base-300">
       <div className='mb-5'>
@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
           <p className='text-sm'>(Only <strong>{availableQuantity}</strong> items left)</p>
           <h3 className='text-4xl font-bold'>${ price }</h3>
         </div>
-        <Link className='btn btn-warning text-black text-base font-semibold btn-block'>View More</Link>
+        <Link to={`/product/${toyId}`} className='btn btn-warning text-black text-base font-semibold btn-block'>View More</Link>
       </div>
     </div>
   );
