@@ -3,8 +3,6 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { Link } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
-import { GoogleAuthProvider } from 'firebase/auth';
-const googleProvider = new GoogleAuthProvider();
 const Login = () => {
   const {loginWithEmail, loginWithGoogle} = useContext(AuthContext);
   const handleEmailLogin = (e) => {
@@ -19,9 +17,9 @@ const Login = () => {
         alert(err.message)
       })
   }
-  
+
   const handleGoogleLogin = () => {
-    loginWithGoogle(googleProvider)
+    loginWithGoogle()
       .then(result => {
         console.log(result.user);
       }).catch(err => {
