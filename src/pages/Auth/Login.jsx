@@ -1,18 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { HiOutlineMail } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
+import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
 const Login = () => {
-  const {loginWithEmail, loginWithGoogle} = useContext(AuthContext);
+  const [email, setEmail] = useState(null)
+  const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  const { loginWithEmail, loginWithGoogle } = useContext(AuthContext);
   const handleEmailLogin = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
+    console.log(email);
     const password = e.target.password.value;
 
     loginWithEmail(email, password)
       .then(result => {
         console.log(result.user);
+        e.target.reset();
       }).catch(err => {
         alert(err.message)
       })
@@ -35,19 +40,28 @@ const Login = () => {
             <h1 className="text-2xl font-bold text-center">Login</h1>
             <label className="label">Email</label>
             <div className='relative'>
-              <input type="email" name='email' className="input w-full pl-10" placeholder="Email" />
-              <HiOutlineMail className='text-mist-300 w-6 h-6 absolute left-2 top-2'/>
+              <input  onChange={(e) => setEmail(e.target.value)} type="email" name='email' className="input w-full pl-10" placeholder="Email" />
+              <HiOutlineMail className='text-mist-700 w-6 h-6 absolute left-2 top-2'/>
             </div>
             <label className="label">Password</label>
             <div className='relative'>
-              <input type="password" name='password' className="input w-full pl-10" placeholder="Password" />
-              <RiLockPasswordLine className='text-mist-300 w-6 h-6 absolute left-2 top-2'/>
+              <input type={!isVisible ? "password" : "text"} name='password' className="input w-full pl-10" placeholder="Password" />
+              <RiLockPasswordLine className='text-mist-700 w-6 h-6 absolute left-2 top-2' />
+              <button type='button' className='absolute right-2.5 top-2.5' onClick={() => setIsVisible(!isVisible) }>
+                {
+                  isVisible ?
+                  <BsEyeFill className='w-5 h-5 text-mist-700' />
+                  : <BsEyeSlashFill className='w-5 h-5 text-mist-700' />
+                }
+              </button>
             </div>
 
             <button className="btn btn-accent text-base-100 mt-4 mb-3">Login</button>
             <div className='flex justify-between items-center'>
               <p className='text-sm'>Don't have an account? <Link to={`/register`} className='link link-accent'>Register</Link></p>
-              <p className='text-sm'><Link className='link link-accent'>Forgot Password?</Link></p>
+              <button type='button'
+                onClick={() => navigate("/forget-password", { state: email })}
+                className='link link-accent text-sm'>Forgot Password?</button>
             </div>
           </fieldset>
         </form>

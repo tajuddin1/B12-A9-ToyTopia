@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import ProductDetails from "../pages/Products/ProductDetails";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
+import ForgetPassword from "../pages/Auth/ForgetPassword";
 const url = "/toys.json";
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      {
+        path: "/forget-password",
+        Component: ForgetPassword,
       }
     ]
   }

@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { HiLink, HiOutlineMail, HiOutlineUserCircle } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { Link } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../../Firebase/Firebase.init';
+import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
 
 const Register = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const { registerWithEmail, loginWithGoogle } = useContext(AuthContext);
   const handleEmailSignUp = (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ const Register = () => {
           }).catch(err => {
             console.log(err.message);
           })
+        e.target.reset();
       }).catch(err => {
         console.log(err.message);
       })
@@ -60,10 +63,17 @@ const Register = () => {
             </div>
             <label className="label">Password</label>
             <div className='relative'>
-              <input type="password" name='password' className="input w-full pl-10" placeholder="Password" />
-              <RiLockPasswordLine className='text-mist-700 w-6 h-6 absolute left-2 top-2'/>
+              <input type={!isVisible ? "password" : "text"} name='password' className="input w-full pl-10" placeholder="Password" />
+              <RiLockPasswordLine className='text-mist-700 w-6 h-6 absolute left-2 top-2' />
+              <button type='button' className='absolute right-2.5 top-2.5' onClick={() => setIsVisible(!isVisible) }>
+                {
+                  isVisible ?
+                  <BsEyeFill className='w-5 h-5 text-mist-700' />
+                  : <BsEyeSlashFill className='w-5 h-5 text-mist-700' />
+                }
+              </button>
             </div>
-            <button className="btn btn-accent text-base-100 mt-4 mb-3">Login</button>
+            <button className="btn btn-accent text-base-100 mt-4 mb-3">Register</button>
             <div className='flex justify-between items-center'>
               <p className='text-sm'>Already have an account? <Link to={`/login`} className='link link-accent'>Login</Link></p>
             </div>
