@@ -1,0 +1,32 @@
+import React from 'react';
+import { AuthContext } from '../Context/AuthContext';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { auth } from '../Firebase/Firebase.init';
+
+const AuthProvider = ({ children }) => {
+
+  const registerWithEmail = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password)
+  }
+  const loginWithEmail = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+
+  const loginWithGoogle = (provider) => {
+    return signInWithPopup(auth, provider)
+  }
+
+  const authInfo = {
+    loginWithEmail,
+    loginWithGoogle,
+    registerWithEmail
+  }
+
+  return (
+    <AuthContext value={authInfo}>
+      {children}
+    </AuthContext>
+  );
+};
+
+export default AuthProvider;
