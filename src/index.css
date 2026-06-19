@@ -22,3 +22,9 @@
 body{
   background-color: var(--color-base-300);
 }
+
+.divider:before,.divider:after {
+  content: "";
+  height: 1px;
+  background-color: var(--color-mist-300);
+}
