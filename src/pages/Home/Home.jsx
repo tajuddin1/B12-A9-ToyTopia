@@ -10,6 +10,7 @@ const Home = () => {
   console.log(products);
   return (
     <div>
+      <title>Home - ToyTopia</title>
       <Slider />
       <div className='max-w-340 mx-auto py-16'>
         <h1 className='text-4xl text-center font-bold font-BG mb-12'>Popular Toys</h1>

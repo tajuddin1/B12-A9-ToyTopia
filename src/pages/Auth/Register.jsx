@@ -42,6 +42,7 @@ const Register = () => {
 
   return (
     <div className='py-20'>
+      <title>Register - ToyTopia</title>
       <div className='card max-w-150 mx-auto p-10 bg-mist-50 shadow'>
         <form onSubmit={handleEmailSignUp}>
           <fieldset className="fieldset">

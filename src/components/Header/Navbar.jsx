@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   console.log(user);
 
   const handleLogOut = () => {
@@ -33,7 +33,7 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-2 mt-3 w-52 p-2 shadow">
               <li><NavLink>Home</NavLink></li>
-              <li><NavLink>Products</NavLink></li>
+              <li><NavLink>Shop</NavLink></li>
               <li><NavLink>Profile</NavLink></li>
             </ul>
           </div>
@@ -42,23 +42,29 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li><NavLink to={`/`} className="navLink text-base text-base-100">Home</NavLink></li>
-            <li><NavLink to={`/products`} className="navLink text-base text-base-100">Products</NavLink></li>
+            <li><NavLink to={`/shop`} className="navLink text-base text-base-100">Shop</NavLink></li>
             <li><NavLink to={`/profile`} className="navLink text-base text-base-100">Profile</NavLink></li>
           </ul>
         </div>
         <div className="navbar-end">
           {
-            user ? (
-              <>
-                <div className='w-12 h-12 mr-3'>
-                  <img className='w-full rounded-full h-full object-cover' src={user.photoURL} alt="" />
-                </div>
-                <button onClick={handleLogOut} className="btn shadow-none">Logout</button>
-              </>
-            ) : (
-              <Link to={`/login`} className="btn shadow-none">Login</Link>
+            loading ? <span className="loading loading-spinner loading-xl"></span> : (
+              user ? (
+                <>
+                  <div className='w-10 h-10 mr-3 relative group'>
+                    <img className='w-full rounded-full h-full object-cover' src={user.photoURL} alt="" />
+                    <p className="p-2 bg-base-100 absolute z-5 whitespace-nowrap top-11 right-0 rounded font-bold hidden group-hover:block">
+                      {user.displayName}
+                    </p>
+                  </div>
+                  <button onClick={handleLogOut} className="btn shadow-none">Logout</button>
+                </>
+              ) : (
+                <Link to={`/login`} className="btn shadow-none">Login</Link>
+              )
             )
           }
+          
         </div>
       </div>
     </>

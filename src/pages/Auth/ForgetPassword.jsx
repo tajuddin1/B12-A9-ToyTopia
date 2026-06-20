@@ -23,6 +23,7 @@ const ForgetPassword = () => {
 
   return (
     <div className='py-20'>
+      <title>Forget Password - ToyTopia</title>
       <div className='card max-w-150 mx-auto p-10 bg-mist-50 shadow'>
         <form onSubmit={handleForgetPassword}>
           <fieldset className="fieldset">
