@@ -1,8 +1,16 @@
-import React from 'react';
+import { useContext } from 'react';
 import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../Context/AuthContext';
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut = () => {
+    logOut().then(() => {console.log("logout success")}).catch(err => console.log(err.message))
+  }
+
   return (
     <>
       <div className='bg-black'>
@@ -39,7 +47,18 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to={`/login`} className="btn shadow-none">Login</Link>
+          {
+            user ? (
+              <>
+                <div className='w-12 h-12 mr-3'>
+                  <img className='w-full rounded-full h-full object-cover' src={user.photoURL} alt="" />
+                </div>
+                <button onClick={handleLogOut} className="btn shadow-none">Logout</button>
+              </>
+            ) : (
+              <Link to={`/login`} className="btn shadow-none">Login</Link>
+            )
+          }
         </div>
       </div>
     </>
