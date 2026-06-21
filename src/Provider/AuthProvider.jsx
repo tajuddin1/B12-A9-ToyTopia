@@ -4,7 +4,8 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged,
 import { auth } from '../Firebase/Firebase.init';
 const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
+  
   const [loading, setloading] = useState(true);
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const AuthProvider = ({ children }) => {
   const registerWithEmail = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
   }
+
   const loginWithEmail = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
   }
@@ -34,10 +36,12 @@ const AuthProvider = ({ children }) => {
   const logOut = () => {
     return signOut(auth)
   }
+
   const authInfo = {
     user,
     logOut,
     loading,
+    setUser,
     forgetPassword,
     loginWithEmail,
     loginWithGoogle,

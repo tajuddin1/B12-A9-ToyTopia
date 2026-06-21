@@ -7,6 +7,7 @@ import Register from "../pages/Auth/Register";
 import ForgetPassword from "../pages/Auth/ForgetPassword";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Shop from "../pages/Shop/SHop";
+import Profile from "../pages/Profile/Profile";
 const url = "/toys.json";
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: "/forget-password",
         Component: ForgetPassword,
+      },
+      {
+        path: "/profile",
+        element: <PrivateRoute><Profile/></PrivateRoute>
       }
     ]
   }

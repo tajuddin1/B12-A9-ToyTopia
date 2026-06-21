@@ -9,7 +9,7 @@ import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
 
 const Register = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { registerWithEmail, loginWithGoogle } = useContext(AuthContext);
+  const { registerWithEmail, loginWithGoogle, setUser } = useContext(AuthContext);
   const handleEmailSignUp = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -22,6 +22,8 @@ const Register = () => {
         updateProfile(auth.currentUser, { displayName: name, photoURL: photoUrl })
           .then(() => {
             console.log("Profile Updated!");
+            const updatedUser = auth.currentUser;
+            setUser({ ...updatedUser });
           }).catch(err => {
             console.log(err.message);
           })

@@ -51,7 +51,7 @@ const Navbar = () => {
             loading ? <span className="loading loading-spinner loading-xl"></span> : (
               user ? (
                 <>
-                  <div className='w-10 h-10 mr-3 relative group'>
+                  <div className='w-10 h-10 rounded-full border-2 border-primary mr-3 relative group'>
                     <img className='w-full rounded-full h-full object-cover' src={user.photoURL} alt="" />
                     <p className="p-2 bg-base-100 absolute z-5 whitespace-nowrap top-11 right-0 rounded font-bold hidden group-hover:block">
                       {user.displayName}
