@@ -1,20 +1,36 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import defautlUserImg from '../../assets/image/user.png'
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../../Firebase/Firebase.init';
+import swal from 'sweetalert';
+
 const Profile = () => {
   const { user, setUser } = useContext(AuthContext);
+  const [nameError, setNameError] = useState();
+  const [photoError, setPhotoError] = useState();
   const hanleProfileUpdate = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const photoUrl = e.target.photoUrl.value;
+
+    if (!name || !photoUrl) {
+      if (!name) {
+        setNameError("Please type your name");
+        return
+      }
+      if (!photoUrl) {
+        setPhotoError("Please type your photo url");
+        return
+      }
+    }
 
     updateProfile(auth.currentUser, { displayName: name, photoURL: photoUrl })
       .then(() => {
         console.log("Profile Updated!");
         const updatedUser = auth.currentUser;
         setUser({ ...updatedUser });
+        swal("Success!", "Your profile has been updated!", "success");
       }).catch(err => {
         console.log(err.message);
       })
@@ -22,6 +38,7 @@ const Profile = () => {
   }
   return (
     <>
+      <title>Profile - ToyTopia</title>
       <div className='py-30 bg-mist-400'></div>
       <div className="max-w-260 mx-auto -mt-20 pb-20">
         <div className="bg-base-100 rounded-lg flex items-center flex-col gap-10 pb-16">
@@ -47,11 +64,23 @@ const Profile = () => {
                 <h1 className="text-2xl font-bold text-center">Update Profile</h1>
 
                 <label className="label">Name</label>
-                <input type="text" name='name' className="input w-full" placeholder="Name" />
+                <input
+                  type="text"
+                  onChange={() => setNameError('')} name='name'
+                  className={`input w-full ${nameError ? "border-red-500" : ""}`}
+                  placeholder="Name"
+                />
+                <p className="text-sm text-red-500">{ nameError }</p>
 
                 <label className="label">PhotoUrl</label>
-                <input type="text" name='photoUrl' className="input w-full" placeholder="Photo Url" />
-
+                <input
+                  type="text"
+                  onChange={() => setPhotoError('')} name='photoUrl'
+                  className={`input w-full ${photoError ? "border-red-500" : ""}`}
+                  placeholder="Photo url"
+                />
+                <p className="text-sm text-red-500">{photoError}</p>
+                
                 <button className="btn btn-accent text-base-100 mt-4">Update</button>
               </fieldset>
             </form>

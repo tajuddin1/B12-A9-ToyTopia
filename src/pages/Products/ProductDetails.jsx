@@ -60,14 +60,14 @@ const ProductDetails = () => {
               </div>
               <div>
                 <p className='font-bold mb-1'>Product Description</p>
-                <p>
+                <div>
                   <div className={!isExpanded ? "line-clamp-4" : "" }>
                     {description}
                   </div>
                   <button onClick={() => setIsExpanded(!isExpanded)} className='text-accent text-sm'>
                     {!isExpanded ? <span className='flex items-center gap-1'> Read More <FaChevronDown className='w-2.5 h-2.5'/> </span> : <span className='flex items-center gap-2'> Read Less <FaChevronUp className='w-2.5 h-2.5'/> </span>}
                   </button>
-                </p>
+                </div>
               </div>
               <div className='flex gap-3'>
                 <Link onClick={()=>document.getElementById('form_modal').showModal()} className='btn flex-1 btn-accent text-base-100 text-md'><BsBag/> Try Now</Link>

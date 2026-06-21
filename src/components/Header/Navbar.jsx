@@ -2,10 +2,9 @@ import { useContext } from 'react';
 import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
-
+import defautlUserImg from '../../assets/image/user.png'
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
-  console.log(user);
 
   const handleLogOut = () => {
     logOut().then(() => {console.log("logout success")}).catch(err => console.log(err.message))
@@ -52,7 +51,7 @@ const Navbar = () => {
               user ? (
                 <>
                   <div className='w-10 h-10 rounded-full border-2 border-primary mr-3 relative group'>
-                    <img className='w-full rounded-full h-full object-cover' src={user.photoURL} alt="" />
+                    <img className='w-full rounded-full h-full object-cover' src={user.photoURL || defautlUserImg} onError={(e) => e.target.src = defautlUserImg} alt="" />
                     <p className="p-2 bg-base-100 absolute z-5 whitespace-nowrap top-11 right-0 rounded font-bold hidden group-hover:block">
                       {user.displayName}
                     </p>
@@ -64,7 +63,6 @@ const Navbar = () => {
               )
             )
           }
-          
         </div>
       </div>
     </>

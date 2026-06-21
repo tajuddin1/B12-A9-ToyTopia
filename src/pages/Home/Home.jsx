@@ -7,7 +7,6 @@ import Category from '../../components/Category/Category';
 
 const Home = () => {
   const products = useLoaderData();
-  console.log(products);
   return (
     <div>
       <title>Home - ToyTopia</title>

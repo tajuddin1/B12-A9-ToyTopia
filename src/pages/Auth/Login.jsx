@@ -1,25 +1,57 @@
 import { useContext, useState } from 'react';
 import { HiOutlineMail } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
 import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
+import swal from 'sweetalert';
+
 const Login = () => {
+  const [emailError, setEmailError] = useState();
+  const [passwordError, setPasswordError] = useState();
   const [email, setEmail] = useState(null)
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
+  console.log(from);
+
   const [isVisible, setIsVisible] = useState(false);
   const { loginWithEmail, loginWithGoogle } = useContext(AuthContext);
   const handleEmailLogin = (e) => {
     e.preventDefault();
     console.log(email);
     const password = e.target.password.value;
-
+    if (!email || !password) {
+      if (!email) {
+        setEmailError("Email is required")
+        return
+      }
+      if (!password) {
+        setPasswordError("Password is required")
+        return
+      }
+    }
     loginWithEmail(email, password)
       .then(result => {
         console.log(result.user);
+        swal({
+          title: "Welcome!",
+          text: "Account Login Successfully.",
+          icon: "success",
+        }).then(() => {
+          navigate(from);
+        })
         e.target.reset();
       }).catch(err => {
-        alert(err.message)
+        console.log(err);
+        if (err.message.includes("invalid-credential")) {
+          swal({
+            title: "Opps!",
+            text: "Invalid email or password.",
+            icon: "error",
+          })
+        }
       })
   }
 
@@ -27,8 +59,20 @@ const Login = () => {
     loginWithGoogle()
       .then(result => {
         console.log(result.user);
+        swal({
+          title: "Welcome!",
+          text: "Account Login Successfully.",
+          icon: "success",
+        }).then(() => {
+          navigate(from);
+        })
       }).catch(err => {
         console.log(err.message);
+        swal({
+          title: "Opps!",
+          text: "Something went wrong!",
+          icon: "error",
+        })
       })
   }
 
@@ -41,12 +85,16 @@ const Login = () => {
             <h1 className="text-2xl font-bold text-center">Login</h1>
             <label className="label">Email</label>
             <div className='relative'>
-              <input  onChange={(e) => setEmail(e.target.value)} type="email" name='email' className="input w-full pl-10" placeholder="Email" />
-              <HiOutlineMail className='text-mist-700 w-6 h-6 absolute left-2 top-2'/>
+              <input onChange={(e) => { setEmail(e.target.value);  setEmailError(null)}} type="email" name='email' className={`input w-full pl-10 ${emailError ? "border-red-500": ""}`} placeholder="Email" />
+              <HiOutlineMail className='text-mist-700 w-6 h-6 absolute left-2 top-2' />
+              <p className='text-sm text-red-500'>{emailError}</p>
             </div>
             <label className="label">Password</label>
             <div className='relative'>
-              <input type={!isVisible ? "password" : "text"} name='password' className="input w-full pl-10" placeholder="Password" />
+              <input
+                type={!isVisible ? "password" : "text"} name='password'
+                onChange={() => setPasswordError(null)}
+                className={`input w-full pl-10 ${passwordError ? "border-red-500" : ""}`} placeholder="Password" />
               <RiLockPasswordLine className='text-mist-700 w-6 h-6 absolute left-2 top-2' />
               <button type='button' className='absolute right-2.5 top-2.5' onClick={() => setIsVisible(!isVisible) }>
                 {
@@ -55,11 +103,12 @@ const Login = () => {
                   : <BsEyeSlashFill className='w-5 h-5 text-mist-700' />
                 }
               </button>
+              <p className='text-sm text-red-500'>{passwordError}</p>
             </div>
 
             <button className="btn btn-accent text-base-100 mt-4 mb-3">Login</button>
             <div className='flex justify-between items-center'>
-              <p className='text-sm'>Don't have an account? <Link to={`/register`} className='link link-accent'>Register</Link></p>
+              <p className='text-sm'>Don't have an account? <Link to={`/register`} state={{ from }} className='link link-accent'>Register</Link></p>
               <button type='button'
                 onClick={() => navigate("/forget-password", { state: email })}
                 className='link link-accent text-sm'>Forgot Password?</button>
