@@ -8,6 +8,7 @@ import ForgetPassword from "../pages/Auth/ForgetPassword";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Shop from "../pages/Shop/SHop";
 import Profile from "../pages/Profile/Profile";
+import Error404 from "../pages/Error/Error404";
 const url = "/toys.json";
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <PrivateRoute><Profile/></PrivateRoute>
+      },
+      {
+        path: '*',
+        Component: Error404,
       }
     ]
   }
