@@ -77,9 +77,9 @@ const Login = () => {
   }
 
   return (
-    <div className='py-20'>
+    <div className='py-20 px-4'>
       <title>Login - ToyTopia</title>
-      <div className='card max-w-150 mx-auto p-10 bg-mist-50 shadow'>
+      <div className='card max-w-150 mx-auto p-8 md:p-10 bg-mist-50 shadow'>
         <form onSubmit={handleEmailLogin}>
           <fieldset className="fieldset">
             <h1 className="text-2xl font-bold text-center">Login</h1>
@@ -108,10 +108,10 @@ const Login = () => {
 
             <button className="btn btn-accent text-base-100 mt-4 mb-3">Login</button>
             <div className='flex justify-between items-center'>
-              <p className='text-sm'>Don't have an account? <Link to={`/register`} state={{ from }} className='link link-accent'>Register</Link></p>
+              <p className='text-xs sm:text-sm'>Don't have an account? <Link to={`/register`} state={{ from }} className='link link-accent'>Register</Link></p>
               <button type='button'
                 onClick={() => navigate("/forget-password", { state: email })}
-                className='link link-accent text-sm'>Forgot Password?</button>
+                className='link link-accent text-xs sm:text-sm'>Forgot Password?</button>
             </div>
           </fieldset>
         </form>

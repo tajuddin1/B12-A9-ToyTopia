@@ -15,28 +15,30 @@ const ProductDetails = () => {
   const {toyName , pictureURL, description,sellerName, sellerEmail, rating, availableQuantity , price , subCategory} = product;
   return (
     <>
-      <div className='py-20'>
+      <div className='py-10 md:py-20'>
         <title>{`${toyName} - ToyTopia`}</title>
-        <div className="max-w-340 mx-auto">
-          <div className="grid grid-cols-2 gap-10 p-8 bg-base-100 rounded-xl">
-            <div className='flex gap-5'>
-              <div className="thumbs flex flex-col max-w-30 gap-5">
-                <img src={pictureURL} className=' p-4 border border-base-300 rounded-lg' alt="" />
-                <img src={pictureURL} className=' p-4 border border-base-300 rounded-lg' alt="" />
-                <img src={pictureURL} className=' p-4 border border-base-300 rounded-lg' alt="" />
-                <img src={pictureURL} className=' p-4 border border-base-300 rounded-lg' alt="" />
-              </div>
-              <div className="flex w-full max-h-132 relative">
-                <img src={pictureURL} className='w-full h-full absolute' alt="" />
+        <div className="max-w-340 mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-10 p-8 bg-base-100 rounded-xl">
+            <div>
+              <div className='flex flex-col-reverse md:flex-row gap-4 md:gap-5'>
+                <div className="flex md:flex-col aspect-square max-w-18 sm:max-w-20 lg:max-w-25 xl:max-w-30 gap-2 sm:gap-5">
+                  <img src={pictureURL} className=' p-3 sm:p-4 border border-base-300 rounded-lg' alt="" />
+                  <img src={pictureURL} className=' p-3 sm:p-4 border border-base-300 rounded-lg' alt="" />
+                  <img src={pictureURL} className=' p-3 sm:p-4 border border-base-300 rounded-lg' alt="" />
+                  <img src={pictureURL} className=' p-3 sm:p-4 border border-base-300 rounded-lg' alt="" />
+                </div>
+                <div className="flex">
+                  <img src={pictureURL} className='h-full object-contain' alt="" />
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-4">
               <div className="badge badge-soft rounded-full badge-primary">
                 {subCategory}
               </div>
-              <h1 className='text-4xl font-bold font-BG'>{toyName}</h1>
+              <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold font-BG'>{toyName}</h1>
               <div className='flex items-center gap-1'>
-                <Rating className='text-accent' emptySymbol={<BsStar className='w-6 h-5' />} fullSymbol={<BsStarFill  className='w-6 h-5' />} initialRating={rating} readonly />
+                <Rating className='text-accent' emptySymbol={<BsStar className='w-4 h-4 sm:w-6 sm:h-5' />} fullSymbol={<BsStarFill  className='w-4 h-4 sm:w-6 sm:h-5' />} initialRating={rating} readonly />
                 <span className='font-semibold'>{rating} Rating</span>
                 <div className="divider divider-horizontal mx-0 my-1"></div>
                 <span className=''>Only <strong className='text-success'>{availableQuantity}</strong> items left</span>
@@ -78,9 +80,9 @@ const ProductDetails = () => {
         </div>
         <Modal/>
       </div>
-      <div className='max-w-340 mx-auto pb-16'>
-        <h1 className='text-4xl font-bold font-BG mb-12'>You Might Also Like</h1>
-        <div className="grid grid-cols-4 gap-8">
+      <div className='max-w-340 mx-auto pb-16 px-4'>
+        <h1 className='text-3xl md:text-4xl font-bold font-BG mb-6 lg:mb-10 xl:mb-12'>You Might Also Like</h1>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 xl:gap-8">
           {
             products.slice(5, 9).map(product => <ProductCard key={product.toyId} product={product}/>)
           }

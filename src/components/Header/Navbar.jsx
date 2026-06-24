@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       <div className='bg-black'>
-        <div className='max-w-340 mx-auto flex justify-between items-center py-1.5 px-2'>
+        <div className='max-w-340 mx-auto flex justify-between items-center py-1.5 px-4'>
           <p className='text-base-100 font-bold text-sm uppercase'>Flash Sale 30% OFF!</p>
           <div className='flex justify-center items-center gap-5'>
             <Link><FaFacebookF className='text-base-100 hover:text-accent'/></Link>
@@ -22,7 +22,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="navbar max-w-340 mx-auto py-1.5 min-h-auto">
+      <div className="navbar max-w-340 mx-auto py-1.5 min-h-auto px-4">
         <div className="navbar-start">
           <div className="dropdown mr-1">
             <div tabIndex={0} role="button" className="text-base-100 p-2 lg:hidden">
@@ -31,9 +31,9 @@ const Navbar = () => {
             <ul
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-2 mt-3 w-52 p-2 shadow">
-              <li><NavLink>Home</NavLink></li>
-              <li><NavLink>Shop</NavLink></li>
-              <li><NavLink>Profile</NavLink></li>
+              <li><NavLink to={`/`}>Home</NavLink></li>
+              <li><NavLink to={`/shop`}>Shop</NavLink></li>
+              <li><NavLink to={`/profile`}>Profile</NavLink></li>
             </ul>
           </div>
           <Link className="text-base-100 text-3xl font-bold font-BG">Toy<span className='text-[#ff6200]'>Topia</span></Link>

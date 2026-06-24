@@ -36,7 +36,7 @@ const ForgetPassword = () => {
   }
 
   return (
-    <div className='py-20'>
+    <div className='py-20 px-4'>
       <title>Forget Password - ToyTopia</title>
       <div className='card max-w-150 mx-auto p-10 bg-mist-50 shadow'>
         <form onSubmit={handleForgetPassword}>
@@ -55,7 +55,7 @@ const ForgetPassword = () => {
 
             <button className="btn btn-accent text-base-100 mt-4 mb-3">Reset</button>
             <div className='flex justify-between items-center'>
-              <p className='text-sm'>Don't have an account? <Link to={`/register`} className='link link-accent'>Register</Link></p>
+              <p className='text-xs md:text-sm'>Don't have an account? <Link to={`/register`} className='link link-accent'>Register</Link></p>
             </div>
           </fieldset>
         </form>

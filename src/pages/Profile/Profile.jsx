@@ -39,10 +39,10 @@ const Profile = () => {
   return (
     <>
       <title>Profile - ToyTopia</title>
-      <div className='py-30 bg-mist-400'></div>
-      <div className="max-w-260 mx-auto -mt-20 pb-20">
-        <div className="bg-base-100 rounded-lg flex items-center flex-col gap-10 pb-16">
-          <div className="w-60 h-60 rounded-full -mt-20 bg-base-100 border-8 border-primary shadow">
+      <div className='py-25 md:py-30 bg-mist-400'></div>
+      <div className="max-w-260 mx-auto -mt-20 pb-20 px-4">
+        <div className="bg-base-100 rounded-lg flex items-center flex-col gap-6 md:gap-10 pb-16">
+          <div className="w-30 h-30 sm:w-40 sm:h-40 md:w-60 md:h-60 rounded-full -mt-15 md:-mt-20 bg-base-100 border-8 border-primary shadow">
             {
               user &&
                 <img
@@ -58,8 +58,8 @@ const Profile = () => {
             <p><span className='text-mist-700'>{user.email}</span></p>
           </div>
             <div className="h-px w-full bg-mist-200"></div>
-          <div>
-            <form onSubmit={hanleProfileUpdate} className='w-lg'>
+          <div className='w-full px-10'>
+            <form onSubmit={hanleProfileUpdate} className='mx-auto w-full md:w-lg'>
               <fieldset className="fieldset">
                 <h1 className="text-2xl font-bold text-center">Update Profile</h1>
 

@@ -4,8 +4,8 @@ import { Link } from 'react-router';
 
 const Footer = () => {
   return (
-    <div className='max-w-340 mx-auto'>
-      <footer className="justify-between footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+    <div className='max-w-340 mx-auto px-4'>
+      <footer className="grid grid-cols-2 sm:grid-cols-none justify-between footer sm:footer-horizontal bg-base-200 text-base-content py-10">
         <nav>
           <h6 className="footer-title">Category</h6>
           <a className="link link-hover hover:text-accent">Educational Toy</a>
@@ -33,7 +33,7 @@ const Footer = () => {
           <a className="link link-hover hover:text-accent">Cookie policy</a>
         </nav>
       </footer>
-      <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
+      <footer className="footer flex-row bg-base-200 text-base-content border-base-300 border-t py-4">
         <aside className="grid-flow-col items-center">
           <FaSlackHash className='w-8 h-8'/>
           <p>
