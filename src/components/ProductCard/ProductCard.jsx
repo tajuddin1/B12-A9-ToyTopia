@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
       <div>
         <h3 className='text-sm sm:text-base md:text-xl xl:text-2xl font-BG font-bold mb-2 md:mb-3 hover:text-accent md:line-clamp-1'><Link to={`/shop/${toyId}`}>{toyName}</Link></h3>
         <div className='flex items-center gap-1'>
-          <Rating className='text-accent md:h-5' emptySymbol={<BsStar className='w-3 h-3' />} fullSymbol={<BsStarFill className='w-3 h-3' />} initialRating={rating} readonly />
+          <Rating className='text-accent h-5.5' style={{lineHeight: "0px"}} emptySymbol={<BsStar className='w-3 h-3' />} fullSymbol={<BsStarFill className='w-3 h-3' />} initialRating={rating} readonly />
           <span className='font-semibold text-xs md:text-sm'>{rating}</span>
         </div>
         <div className="flex justify-between gap-1 items-baseline md:-mt-2 mb-3">
