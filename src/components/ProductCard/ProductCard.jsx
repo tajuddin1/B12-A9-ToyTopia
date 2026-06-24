@@ -19,9 +19,9 @@ const ProductCard = ({ product }) => {
           <Rating className='text-accent md:h-5' emptySymbol={<BsStar className='w-3 h-3' />} fullSymbol={<BsStarFill className='w-3 h-3' />} initialRating={rating} readonly />
           <span className='font-semibold text-xs md:text-sm'>{rating}</span>
         </div>
-        <div className="flex justify-between gap-3 items-baseline md:-mt-2 mb-3">
+        <div className="flex justify-between gap-1 items-baseline md:-mt-2 mb-3">
           <p className='text-xs md:text-sm'>(Only <strong>{availableQuantity}</strong> items left)</p>
-          <h3 className='text-xl sm:text-3xl xl:text-4xl font-bold'>${ price }</h3>
+          <h3 className='text-lg sm:text-3xl xl:text-4xl font-bold'>${ price }</h3>
         </div>
         <Link to={`/shop/${toyId}`} className='btn btn-sm btn-warning text-black text-sm sm:text-base font-semibold btn-block'>View More</Link>
       </div>

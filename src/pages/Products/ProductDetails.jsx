@@ -17,8 +17,8 @@ const ProductDetails = () => {
     <>
       <div className='py-10 md:py-20'>
         <title>{`${toyName} - ToyTopia`}</title>
-        <div className="max-w-340 mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 p-8 bg-base-100 rounded-xl">
+        <div className="max-w-340 mx-auto px-2 sm:px-4">
+          <div className="grid md:grid-cols-2 gap-10  p-5 sm:p-8 bg-base-100 rounded-xl">
             <div>
               <div className='flex flex-col-reverse md:flex-row gap-4 md:gap-5'>
                 <div className="flex md:flex-col aspect-square max-w-18 sm:max-w-20 lg:max-w-25 xl:max-w-30 gap-2 sm:gap-5">
@@ -27,8 +27,8 @@ const ProductDetails = () => {
                   <img src={pictureURL} className=' p-3 sm:p-4 border border-base-300 rounded-lg' alt="" />
                   <img src={pictureURL} className=' p-3 sm:p-4 border border-base-300 rounded-lg' alt="" />
                 </div>
-                <div className="flex">
-                  <img src={pictureURL} className='h-full object-contain' alt="" />
+                <div className="flex items-center justify-center">
+                  <img src={pictureURL} className='max-h-70 sm:max-h-full h-full object-contain' alt="" />
                 </div>
               </div>
             </div>
@@ -39,13 +39,13 @@ const ProductDetails = () => {
               <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold font-BG'>{toyName}</h1>
               <div className='flex items-center gap-1'>
                 <Rating className='text-accent' emptySymbol={<BsStar className='w-4 h-4 sm:w-6 sm:h-5' />} fullSymbol={<BsStarFill  className='w-4 h-4 sm:w-6 sm:h-5' />} initialRating={rating} readonly />
-                <span className='font-semibold'>{rating} Rating</span>
+                <span className='text-sm sm:text-base font-semibold'>{rating} Rating</span>
                 <div className="divider divider-horizontal mx-0 my-1"></div>
-                <span className=''>Only <strong className='text-success'>{availableQuantity}</strong> items left</span>
+                <span className='text-sm sm:text-base'>Only <strong className='text-success'>{availableQuantity}</strong> items left</span>
               </div>
               <div className='flex items-center gap-10'>
                 <h3 className='text-5xl font-bold text-accent font-BG'>${price}</h3>
-                <div className="badge badge-soft badge-success font-semibold rounded-full"> <BiSolidCheckCircle/> In Stock</div>
+                <div className="badge badge-soft text-sm sm:text-base badge-success font-semibold rounded-full"> <BiSolidCheckCircle/> In Stock</div>
               </div>
               <div className='flex justify-between items-center border border-mist-100 hover:bg-mist-50 py-4 px-5 rounded-2xl'>
                 <div className='flex gap-4'>
@@ -63,7 +63,7 @@ const ProductDetails = () => {
               <div>
                 <p className='font-bold mb-1'>Product Description</p>
                 <div>
-                  <div className={!isExpanded ? "line-clamp-4" : "" }>
+                  <div className={`text-sm sm:text-base ${!isExpanded ? "line-clamp-4" : "" }`}>
                     {description}
                   </div>
                   <button onClick={() => setIsExpanded(!isExpanded)} className='text-accent text-sm'>
@@ -80,9 +80,9 @@ const ProductDetails = () => {
         </div>
         <Modal/>
       </div>
-      <div className='max-w-340 mx-auto pb-16 px-4'>
+      <div className='max-w-340 mx-auto pb-16 px-2 sm:px-4'>
         <h1 className='text-3xl md:text-4xl font-bold font-BG mb-6 lg:mb-10 xl:mb-12'>You Might Also Like</h1>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 xl:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 xl:gap-8">
           {
             products.slice(5, 9).map(product => <ProductCard key={product.toyId} product={product}/>)
           }
