@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
-import { Link, useLoaderData, useParams } from 'react-router';
+import { Link, useLoaderData, useNavigate, useParams } from 'react-router';
 import { BsBag, BsStar, BsStarFill } from 'react-icons/bs';
 import Rating from 'react-rating';
 import { FaChevronDown, FaChevronRight, FaChevronUp, FaStore } from 'react-icons/fa';
 import { BiCart, BiSolidCheckCircle } from 'react-icons/bi';
 import Modal from '../../components/Modal/Modal';
 import ProductCard from '../../components/ProductCard/ProductCard';
+import Error404 from '../Error/Error404';
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const products = useLoaderData();
   const [isExpanded, setIsExpanded] = useState(false)
   const product = products.find(toy => toy.toyId === parseInt(productId));
+
+  if (!product) {
+    return (
+      <Error404/>
+    )
+  }
+
   const { toyName, pictureURL, description, sellerName, sellerEmail, rating, availableQuantity, price, subCategory } = product;
   
   return (
