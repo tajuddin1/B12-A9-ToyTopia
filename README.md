@@ -1,16 +1,63 @@
-# React + Vite
+# ToyTopia – Local Kids Toy Store Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Website
 
-Currently, two official plugins are available:
+https://toy-topia-e5d53.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Overview
 
-## React Compiler
+ToyTopia is a vibrant and responsive online toy marketplace designed to help families discover and support local toy sellers. Users can browse popular toys, view detailed toy information, create accounts, log in securely, update their profiles, and explore toys through an engaging user interface.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The platform includes Firebase Authentication, protected routes, page titles, responsive design, and modern ui components to provide a smooth user experience across all devices.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Features
+
+* Swiper slider on the homepage hero section
+* Popular Toys section from local JSON data
+* Responsive design for mobile, tablet, and desktop devices
+* Page titles
+* Custom 404 Not Found page
+* SweetAlert notifications for user actions
+* User image on nav and display username on use image hover
+* User authentication with Email/Password and Google Login
+* Protected routes for Toy Details page,Profile Page
+* Profile update functionality using Firebase updateProfile()
+* Forgot Password functionality with Gmail redirection
+* Context Api used for global authentication state management
+* Firebase onAuthStateChanged() used to persist user login state after page reload
+
+---
+
+## Public Pages
+
+* Home
+* Login
+* Shop
+* Register
+* Forgot Password
+* 404 Not Found
+
+## Protected Pages
+
+* Toy Details
+* Profile
+
+---
+
+## NPM Packages Used
+
+```bash
+react 
+react-dom 
+react-router 
+firebase 
+swiper 
+react-icons 
+react-rating 
+sweetalert 
+tailwindcss 
+daisyui
+```
+

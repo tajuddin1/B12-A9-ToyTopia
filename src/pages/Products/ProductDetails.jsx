@@ -12,7 +12,8 @@ const ProductDetails = () => {
   const products = useLoaderData();
   const [isExpanded, setIsExpanded] = useState(false)
   const product = products.find(toy => toy.toyId === parseInt(productId));
-  const {toyName , pictureURL, description,sellerName, sellerEmail, rating, availableQuantity , price , subCategory} = product;
+  const { toyName, pictureURL, description, sellerName, sellerEmail, rating, availableQuantity, price, subCategory } = product;
+  
   return (
     <>
       <div className='py-10 md:py-20'>

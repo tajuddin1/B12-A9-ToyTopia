@@ -1,10 +1,27 @@
 import React from 'react';
+import swal from 'sweetalert';
 
-const Modal = () => {
+const Modal = ( ) => {
+    const handleTryNow = (e) => {
+      e.preventDefault();
+      
+      const name = e.target.name.value;
+      const email = e.target.email.value;
+      
+      document.getElementById("form_modal").close();
+
+      swal({
+        title: `Thanks ${name}!`,
+        text: `Thanks for your intrest! We will get back you in ${email} asap.`,
+        icon: "success",
+      })
+
+      e.target.reset();
+    }
   return (
     <dialog id="form_modal" className="modal">
       <div className="modal-box p-8">
-        <form>
+        <form onSubmit={handleTryNow}>
           <fieldset className="fieldset">
             <h1 className="text-2xl font-bold text-center">Try Now</h1>
 
